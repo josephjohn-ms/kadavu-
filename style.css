@@ -1,0 +1,615 @@
+/* =============================================
+   KADAVU SERVICED VILLAS — Master Stylesheet
+   Aesthetic: Warm Luxury · Tropical Refined
+   ============================================= */
+
+:root {
+  --gold: #C9A96E;
+  --gold-light: #E8D5A3;
+  --dark: #1A1713;
+  --dark-mid: #2C2720;
+  --text: #4A4035;
+  --text-light: #8A7D70;
+  --cream: #F7F3ED;
+  --white: #FFFFFF;
+  --border: rgba(201, 169, 110, 0.25);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- NAVBAR ---- */
+.kd-navbar {
+  background: rgba(26, 23, 19, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1.5rem;
+  transition: all 0.4s ease;
+}
+
+.kd-navbar.scrolled {
+  background: rgba(26, 23, 19, 0.98);
+  padding: 0.5rem 1.5rem;
+}
+
+.kd-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.kd-brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.18em;
+}
+
+.kd-brand-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.52rem;
+  font-weight: 400;
+  color: rgba(201, 169, 110, 0.65);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.navbar-nav .nav-link {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(247, 243, 237, 0.75) !important;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-item.active .nav-link {
+  color: var(--gold) !important;
+}
+
+.kd-btn-outline {
+  border: 1px solid var(--gold) !important;
+  color: var(--gold) !important;
+  border-radius: 0 !important;
+  padding: 0.4rem 1.1rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.kd-btn-outline:hover {
+  background: var(--gold) !important;
+  color: var(--dark) !important;
+}
+
+/* ---- HERO VIDEO (16:6 aspect ratio) ---- */
+.kd-hero-section {
+  padding-top: 70px; /* navbar height */
+}
+
+.kd-video-wrapper {
+  position: relative;
+  width: 100%;
+  /* 16:6 aspect ratio = 6/16 * 100 = 37.5% */
+  padding-bottom: 37.5%;
+  overflow: hidden;
+  background: var(--dark);
+}
+
+.kd-hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+/* Fallback background image when video not loaded */
+.kd-video-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.kd-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26,23,19,0.15) 0%,
+    rgba(26,23,19,0.5) 60%,
+    rgba(26,23,19,0.75) 100%
+  );
+  z-index: 1;
+}
+
+.kd-hero-content {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.kd-hero-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+}
+
+.kd-hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.kd-hero-title em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.kd-hero-tagline {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 1.5rem;
+}
+
+/* ---- PAGE HERO (inner pages) ---- */
+.kd-page-hero {
+  padding-top: 70px;
+  height: 55vh;
+  min-height: 320px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.kd-page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(26,23,19,0.3), rgba(26,23,19,0.72));
+}
+
+.kd-page-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2.5rem 2rem;
+  text-align: left;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ---- GOLD BUTTON ---- */
+.kd-btn-gold {
+  display: inline-block;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--dark) !important;
+  background: var(--gold);
+  padding: 0.75rem 2rem;
+  border: none;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  border-radius: 0;
+}
+
+.kd-btn-gold:hover {
+  background: var(--dark);
+  color: var(--gold) !important;
+}
+
+/* ---- SECTION TYPOGRAPHY ---- */
+.kd-section-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.kd-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+
+.kd-section-title em { font-style: italic; color: var(--text-light); }
+
+.kd-section-body {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--text);
+  font-weight: 300;
+}
+
+/* ---- FEATURE CARDS ---- */
+.kd-features {
+  background: var(--dark);
+}
+
+.kd-feature-card {
+  padding: 2rem 1rem;
+  border: 1px solid var(--border);
+  transition: border-color 0.3s;
+}
+
+.kd-feature-card:hover {
+  border-color: var(--gold);
+}
+
+.kd-feature-icon {
+  font-size: 1.8rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.kd-feature-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(247,243,237,0.75);
+  font-weight: 400;
+  margin: 0;
+}
+
+/* ---- CTA SECTION ---- */
+.kd-cta-section {
+  background: var(--white);
+}
+
+.kd-cta-img {
+  border-radius: 0;
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+/* ---- ABOUT PAGE ---- */
+.kd-about-story {
+  background: var(--cream);
+}
+
+.kd-about-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---- VALUES ---- */
+.kd-values-section {
+  background: var(--dark);
+}
+
+.kd-values-section .kd-section-eyebrow { color: var(--gold); }
+.kd-values-section .kd-section-title { color: var(--cream); }
+
+.kd-value-card {
+  padding: 2.5rem 1.5rem;
+  border-top: 1px solid var(--border);
+  height: 100%;
+  transition: border-color 0.3s;
+}
+
+.kd-value-card:hover { border-top-color: var(--gold); }
+
+.kd-value-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  color: var(--gold);
+  opacity: 0.35;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.kd-value-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  color: var(--cream);
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.kd-value-body {
+  font-size: 0.88rem;
+  color: rgba(247,243,237,0.6);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* ---- QUOTE ---- */
+.kd-quote-section {
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.kd-quote-icon {
+  font-size: 1.5rem;
+  color: var(--gold);
+  opacity: 0.5;
+  display: block;
+}
+
+.kd-blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  font-style: italic;
+  color: var(--dark);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.kd-quote-author {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ---- VILLA CARDS ---- */
+.kd-villa-card {
+  background: var(--white);
+  box-shadow: 0 4px 30px rgba(26,23,19,0.08);
+  overflow: hidden;
+}
+
+.kd-villa-img-wrap {
+  position: relative;
+  height: 100%;
+  min-height: 380px;
+}
+
+.kd-villa-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.kd-villa-card:hover .kd-villa-img {
+  transform: scale(1.04);
+}
+
+.kd-villa-badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+}
+
+.kd-villa-info {
+  background: var(--white);
+}
+
+.kd-villa-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.kd-amenity-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.kd-amenity-list li {
+  font-size: 0.88rem;
+  color: var(--text);
+  padding: 0.3rem 0;
+  font-weight: 300;
+}
+
+.kd-amenity-list li i {
+  color: var(--gold);
+  margin-right: 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* ---- GALLERY STRIP ---- */
+.kd-gallery-strip { background: var(--dark); }
+
+.kd-gallery-thumb {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s;
+  filter: brightness(0.85);
+}
+
+.kd-gallery-thumb:hover {
+  filter: brightness(1);
+}
+
+/* ---- FOOTER ---- */
+.kd-footer {
+  background: var(--dark);
+  border-top: 1px solid var(--border);
+}
+
+.kd-footer-heading {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.kd-footer-desc {
+  font-size: 0.83rem;
+  color: rgba(247,243,237,0.45);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.kd-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kd-footer-links li { margin-bottom: 0.5rem; }
+
+.kd-footer-links a {
+  font-size: 0.85rem;
+  color: rgba(247,243,237,0.55);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+}
+
+.kd-footer-links a:hover { color: var(--gold); }
+
+.kd-footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kd-footer-contact li {
+  font-size: 0.83rem;
+  color: rgba(247,243,237,0.55);
+  margin-bottom: 0.65rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.kd-footer-contact li i {
+  color: var(--gold);
+  margin-right: 0.6rem;
+  width: 14px;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.kd-social-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.kd-social-links a {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(247,243,237,0.5);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.kd-social-links a:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.kd-footer-bottom {
+  border-top: 1px solid var(--border);
+  padding: 1.25rem 0;
+  text-align: center;
+}
+
+.kd-footer-bottom p {
+  font-size: 0.72rem;
+  color: rgba(247,243,237,0.25);
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+/* ---- INTRO STRIP ---- */
+.kd-intro-strip { background: var(--cream); }
+
+/* ---- ANIMATIONS ---- */
+.kd-villa-card, .kd-feature-card, .kd-value-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.kd-villa-card:hover {
+  box-shadow: 0 12px 50px rgba(26,23,19,0.15);
+}
+
+/* ---- RESPONSIVE TWEAKS ---- */
+@media (max-width: 768px) {
+  .kd-video-wrapper {
+    padding-bottom: 56.25%; /* switch to 16:9 on small screens */
+  }
+
+  .kd-hero-content {
+    bottom: 8%;
+  }
+
+  .kd-villa-img-wrap {
+    min-height: 260px;
+  }
+
+  .kd-about-img,
+  .kd-cta-img {
+    height: 280px;
+  }
+
+  .kd-gallery-thumb {
+    height: 140px;
+  }
+
+  .kd-page-hero {
+    height: 45vh;
+  }
+}
